@@ -23,11 +23,11 @@ pyparsing==3.2.1
 PyQt5==5.15.11
 PyQt5-Qt5==5.15.16
 PyQt5_sip==12.16.1
-requests==2.32.3
+requests==2.32.4
 rich==13.9.4
 six==1.17.0
 sortedcontainers==2.4.0
 toml==0.10.2
-urllib3==2.3.0
+urllib3==2.5.0
 webencodings==0.5.1
 xlib==0.21
