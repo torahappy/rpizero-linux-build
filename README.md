@@ -2,6 +2,8 @@
 
 This is a script to build a custom raspberry pi kernel, including a kernel patch to fix dwc2 wakeup issue. I haven't tested, but probably works for Pi4 or Pi5.
 
+A note for Pi5: in order for usb gadgets to work, it may be required to use Thunderbolt 4 or USB 4 cable. Thus, if the PC connecting to Raspberry Pi doesn't have these ports, usb gadget features might not work at all. You may have to supply additional 5V3A power supply through the GPIO pins after you connect a Thunderbolt/USB4 cable to your PC.
+
 Also, the directory `raspi_scripts` contains utilities to setup HID keyboard, RNDIS or ECM. Using a python library by @Danny-Dasilva (<https://github.com/Danny-Dasilva/Py_Keyboard>)
 
 Patch reference: <https://github.com/pikvm/packages/blob/master/packages/linux-rpi-pikvm/1003-remote-wakeup.patch> <https://github.com/raspberrypi/linux/issues/3977> <http://www.dt8.jp/cgi-bin/adiary/adiary.cgi/0583>
