@@ -4,7 +4,7 @@ certifi==2025.1.31
 charset-normalizer==3.4.1
 cyclonedx-python-lib==7.6.2
 defusedxml==0.7.1
-filelock==3.17.0
+filelock==3.20.3
 html5lib==1.1
 idna==3.10
 license-expression==30.4.1
@@ -28,6 +28,6 @@ rich==13.9.4
 six==1.17.0
 sortedcontainers==2.4.0
 toml==0.10.2
-urllib3==2.5.0
+urllib3==2.6.3
 webencodings==0.5.1
 xlib==0.21
