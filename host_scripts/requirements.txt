@@ -20,9 +20,9 @@ pip_audit==2.7.3
 py-serializable==1.1.2
 Pygments==2.19.1
 pyparsing==3.2.1
-PyQt5==5.15.11
-PyQt5-Qt5==5.15.16
-PyQt5_sip==12.16.1
+PyQt6==6.10.2
+PyQt6-Qt6==6.10.2
+PyQt6_sip==13.11.0
 requests==2.32.4
 rich==13.9.4
 six==1.17.0
