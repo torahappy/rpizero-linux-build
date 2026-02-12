@@ -257,10 +257,12 @@ class MainWindow(QMainWindow):
                 self.handle_shortcuts(keys_dry)
             return True
         elif event.type() == QEvent.Type.MouseButtonPress: # type: ignore
-            sm.add_button(event.button())
+            print("press", event.button().value)
+            sm.add_button(event.button().value)
             return True
         elif event.type() == QEvent.Type.MouseButtonRelease: # type: ignore
-            sm.remove_button(event.button())
+            print("remove", event.button().value)
+            sm.remove_button(event.button().value)
             return True
         elif event.type() == QEvent.Type.Wheel: # type: ignore
             print("angleDelta", event.angleDelta())
