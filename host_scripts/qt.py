@@ -4,9 +4,9 @@ import subprocess
 import datetime
 from typing import Callable
 
-from PyQt5.QtCore import QSize, QTimer, Qt, QEvent, QPoint
-from PyQt5.QtGui import QCursor
-from PyQt5.QtWidgets import QApplication, QMainWindow, QGraphicsView, QGraphicsScene
+from PyQt6.QtCore import QSize, QTimer, Qt, QEvent, QPoint
+from PyQt6.QtGui import QCursor
+from PyQt6.QtWidgets import QApplication, QMainWindow, QGraphicsView, QGraphicsScene
 from keymap import unshift_table, create_key_report
 
 COEFF_MOVE = 1.0
@@ -239,30 +239,30 @@ class MainWindow(QMainWindow):
         sm.set_center((self.mainwidth//2,self.mainwidth//2))
 
     def eventFilter(self, source, event): # type: ignore
-        if event.type() == QEvent.MouseMove: # type: ignore
+        if event.type() == QEvent.Type.MouseMove: # type: ignore
             sm.change_pos((int(event.pos().x() * COEFF_MOVE), int(event.pos().y() * COEFF_MOVE)))
             return True
-        elif event.type() == QEvent.KeyPress and not event.isAutoRepeat(): # type: ignore
+        elif event.type() == QEvent.Type.KeyPress and not event.isAutoRepeat(): # type: ignore
             keys_dry = sm.add_key_dry(event.key())
             if not keys_dry in self.SHORTCUTS:
                 sm.add_key(event.key())
             else:
                 self.handle_shortcuts(keys_dry)
             return True
-        elif event.type() == QEvent.KeyRelease and not event.isAutoRepeat(): # type: ignore
+        elif event.type() == QEvent.Type.KeyRelease and not event.isAutoRepeat(): # type: ignore
             keys_dry = sm.remove_key_dry(event.key())
             if not keys_dry in self.SHORTCUTS:
                 sm.remove_key(event.key())
             else:
                 self.handle_shortcuts(keys_dry)
             return True
-        elif event.type() == QEvent.MouseButtonPress: # type: ignore
+        elif event.type() == QEvent.Type.MouseButtonPress: # type: ignore
             sm.add_button(event.button())
             return True
-        elif event.type() == QEvent.MouseButtonRelease: # type: ignore
+        elif event.type() == QEvent.Type.MouseButtonRelease: # type: ignore
             sm.remove_button(event.button())
             return True
-        elif event.type() == QEvent.Wheel: # type: ignore
+        elif event.type() == QEvent.Type.Wheel: # type: ignore
             print("angleDelta", event.angleDelta())
             print("pixelDelta", event.pixelDelta())
             if event.pixelDelta().y() != 0:
