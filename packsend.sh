@@ -15,11 +15,11 @@ scp './build/.config' $MYUSERNAME@$MYHOSTNAME:kernel-config
 ssh $MYUSERNAME@$MYHOSTNAME "sudo cp /home/$MYUSERNAME/kernel-config /boot/config-$MY_KERNEL_VERSION"
 
 echo "Creating initramfs..."
-ssh $MYUSERNAME@$MYHOSTNAME "/usr/sbin/mkinitramfs -o initramfs $MY_KERNEL_VERSION"
+ssh $MYUSERNAME@$MYHOSTNAME "sudo /usr/sbin/mkinitramfs -o initramfs $MY_KERNEL_VERSION"
 ssh $MYUSERNAME@$MYHOSTNAME "sudo cp initramfs /boot/firmware/initramfs-$MY_KERNEL_SUFFIX"
 
 echo "Cleaning up..."
-ssh $MYUSERNAME@$MYHOSTNAME "rm initramfs install.tar.xz kernel-config"
+ssh $MYUSERNAME@$MYHOSTNAME "sudo rm initramfs install.tar.xz kernel-config"
 
 echo "Rebooting..."
 ssh $MYUSERNAME@$MYHOSTNAME "sudo reboot"
