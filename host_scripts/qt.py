@@ -181,7 +181,7 @@ class MainWindow(QMainWindow):
         self.frametimer.timeout.connect(self.frame_process)
         self.frametimer.start()
 
-        self.setWindowTitle("My App")
+        self.setWindowTitle("Rpizero Mouse and Keyboard Sync")
         self.view = QGraphicsView()
         self.view.setFixedSize(QSize(self.mainwidth,self.mainwidth))
         self.scene = QGraphicsScene()
